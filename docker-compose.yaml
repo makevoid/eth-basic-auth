@@ -6,14 +6,6 @@ services:
       context: ./parity
     volumes:
       - parity:/parity/data
-    # command: --light --jsonrpc-interface 0.0.0.0
-    # image: parity/parity:v2.7.2-stable
-    # deploy:
-    #   restart_policy: &restart_policy
-    #     condition: any
-    #     delay: 5s
-    #     max_attempts: 5
-    #     window: 30s
 
   nginx:
     build:
@@ -22,9 +14,6 @@ services:
       - parity
     ports:
       - 80:80
-    # image: nginx:1.18.0-alpine
-    # deploy:
-    #   <<: *restart_policy
 
 volumes:
   parity:
