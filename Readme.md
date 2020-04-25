@@ -23,6 +23,16 @@ then run:
     geth attach http://parity:password@localhost
 
 
+### Regenerate the parity private key
+
+- regenerate the ethereum key via `parity account create`
+- update the dockerfile
+
+<!--
+### Deploy it
+
+- run deploy.rb (soon)  -->
+
 ---
 
 Enjoy!
