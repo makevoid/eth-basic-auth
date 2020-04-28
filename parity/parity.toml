@@ -13,7 +13,7 @@ unlock = ["0x95a44161fd078d89a7159b6edc4bb3c8a9ad1f17"]
 interface = "0.0.0.0"
 cors = ["all"]
 hosts = ["all"]
-# apis = ["web3", "eth", "net", "parity", "traces", "rpc", "personal", "parity_accounts", "signer", "parity_set"]
+apis = ["web3", "eth", "net", "parity", "traces", "rpc", "personal", "parity_accounts", "signer", "parity_set"]
 
 [websockets]
 disable = true
