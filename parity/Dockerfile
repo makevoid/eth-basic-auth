@@ -15,6 +15,6 @@ RUN echo "Building parity${PARITY_ID}..."
 
 COPY ./password       password
 COPY ./parity.toml    parity.toml
-COPY ./key            ./data/keys/parity
+COPY ./key/*          ./keys/ethereum/
 
 ENTRYPOINT [ "bash", "./entrypoint-parity.sh" ]
