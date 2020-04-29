@@ -1,6 +1,6 @@
 # eth-basic-auth
 
-Ethereum node setup behind nginx basic auth
+Ethereum node setup behind nginx basic auth (eth mainnet)
 
 ---
 
