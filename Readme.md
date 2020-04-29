@@ -25,7 +25,7 @@ then run:
 
 ### Regenerate the parity private key
 
-- regenerate the ethereum key via `parity account create`
+- regenerate the ethereum key via `parity account create` (very important, as this private key is public :), update that and the parity.toml with the correct address)
 - update the dockerfile
 
 <!--
