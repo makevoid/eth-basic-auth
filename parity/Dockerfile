@@ -1,20 +1,8 @@
-FROM parity/parity:v2.7.2-stable
-USER root
+FROM ethereum/client-go:release-1.9
+WORKDIR /geth
 
-RUN mkdir -p /parity
+RUN mkdir data
+COPY keys/* /geth/data/keystore/
+COPY password /geth/password
 
-WORKDIR /parity
-
-RUN apt-get update -y
-RUN apt-get install -y curl bash software-properties-common
-
-COPY ./entrypoint-parity.sh .
-
-ARG PARITY_ID
-RUN echo "Building parity${PARITY_ID}..."
-
-COPY ./password       password
-COPY ./parity.toml    parity.toml
-COPY ./key/*          ./keys/ethereum/
-
-ENTRYPOINT [ "bash", "./entrypoint-parity.sh" ]
+ENTRYPOINT ["/usr/local/bin/geth", "--syncmode", "light", "--datadir", "/geth/data", "--rpc", "--rpcaddr", "0.0.0.0", "--rpccorsdomain", "*", "--rpcvhosts", "*", "--nat", "any", "--rpcapi", "eth,web3,personal,net", "--nousb", "--unlock", "0", "--password", "/geth/password", "--allow-insecure-unlock"]

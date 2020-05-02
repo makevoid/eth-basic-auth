@@ -1,19 +1,20 @@
 version: "3.7"
 
 services:
-  parity:
+  eth:
     build:
-      context: ./parity
+      context: ./eth
     volumes:
-      - parity:/parity/data
+      - eth:/root
+    restart: unless-stopped
 
   nginx:
     build:
       context: ./auth
     depends_on:
-      - parity
+      - eth
     ports:
       - 80:80
 
 volumes:
-  parity:
+  eth:

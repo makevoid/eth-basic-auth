@@ -1,12 +1,16 @@
 # eth-basic-auth
 
-Ethereum node setup behind nginx basic auth (eth mainnet)
+Private fork of https://github.com/makevoid/eth-basic-auth but with an unknown private key :D
+
+Ethereum node setup behind nginx basic auth
 
 ---
 
 Versions:
 
-- Parity 2.7
+- Geth 1.9.3
+
+(for Parity check the `parity` branch)
 
 
 ### Run
@@ -25,7 +29,7 @@ then run:
 
 ### Regenerate the parity private key
 
-- regenerate the ethereum key via `parity account create` (very important, as this private key is public :), update that and the parity.toml with the correct address)
+- regenerate the ethereum key via `parity account create`
 - update the dockerfile
 
 <!--
