@@ -1,8 +1,6 @@
 # eth-basic-auth
 
-Private fork of https://github.com/makevoid/eth-basic-auth but with an unknown private key :D
-
-Ethereum node setup behind nginx basic auth
+Ethereum Geth node setup behind nginx basic auth
 
 ---
 
@@ -10,7 +8,7 @@ Versions:
 
 - Geth 1.9.3
 
-(for Parity check the `parity` branch)
+(for Parity check the `geth` branch)
 
 
 ### Run
@@ -20,22 +18,19 @@ Versions:
 
 ### Test it out
 
-regenerate the .htpasswd (`htpasswd -c ./auth/.htpasswd parity`)
+regenerate the .htpasswd (`htpasswd -c ./auth/.htpasswd geth`)
 
 then run:
 
-    geth attach http://parity:password@localhost
+    geth attach http://geth:PASSWORD@localhost
 
 
-### Regenerate the parity private key
+### Regenerate the geth private key
 
-- regenerate the ethereum key via `parity account create`
-- update the dockerfile
+Important, regenerate the private key, as this one is public domain :)
 
-<!--
-### Deploy it
-
-- run deploy.rb (soon)  -->
+- regenerate the ethereum key via `geth account new`
+- drop the key into `./eth/keys`
 
 ---
 
